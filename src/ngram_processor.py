@@ -7,9 +7,10 @@ class ngram_processor:
     replace_symbols = ["...", ".", ",", "? ", ": ", '"', '|', "'", "--"]
     stop_words = []
     ngram_dict = {}
-    n = 5
+    n = 2
 
-    def __init__(self, text, weight):
+    def __init__(self, text, weight, num=2):
+        self.n = num
         text = text.lower()
         self.body = text
         #self.words = text.split();
