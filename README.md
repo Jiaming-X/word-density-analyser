@@ -1,5 +1,8 @@
 # word-density-analyser
 
+### summary
+This project uses n gram algo to implement a generic word density analyser that finds the relevant topics of any webpage.
+
 ### example commands, and their results:
 ```sh
 python main.py "http://www.cnn.com/2013/06/10/politics/edward-snowden-profile/" 
@@ -11,8 +14,6 @@ Scores | topics
 10.6  |  snowden live
 10.6  |  surveillance program
 10.6  |  leaks safeguard
-
-
 ```sh
 python main.py "http://www.amazon.com/Cuisinart-CPT-122-Compact-2-Slice-Toaster/dp/B009GQ034C/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1431620315&sr=1-1&keywords=toaster"
 ```
@@ -23,8 +24,6 @@ Scores | topics
 14.8  |  plastic toaster
 14.8  |  compact plastic
 14.2  |  compact plastic toaster (white)
-
-
 
 ```sh
 python main.py "http://blog.rei.com/camp/how-to-introduce-your-indoorsy-friend-to-the-outdoors/"
