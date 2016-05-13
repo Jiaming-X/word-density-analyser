@@ -14,7 +14,6 @@ Scores | topics
 ```sh
 python main.py "http://www.amazon.com/Cuisinart-CPT-122-Compact-2-Slice-Toaster/dp/B009GQ034C/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1431620315&sr=1-1&keywords=toaster"
 ```
-Results:
 Scores | topics
 ------ | -------------
 14.8  |  cuisinart cpt-122
