@@ -16,19 +16,26 @@ import operator
 
 
 def main(argv):
-    relevant_scores = {}
+    if not len(argv) == 2:
+        print "Please enter url"
+        return
 
-    aHtmlPage = htmlPage(argv[1]);
-    results = ngram_processor(text = aHtmlPage.body, weight = 0.2, num = 4);
-    relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
+    try:
+        relevant_scores = {}
 
-    results = ngram_processor(text = aHtmlPage.metaData, weight = 5.0, num = 4);
-    relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
+        aHtmlPage = htmlPage(argv[1]);
+        results = ngram_processor(text = aHtmlPage.body, weight = 0.2, num = 4);
+        relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
 
-    results = ngram_processor(text = aHtmlPage.title, weight = 10.0, num = 4);
-    relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
+        results = ngram_processor(text = aHtmlPage.metaData, weight = 5.0, num = 4);
+        relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
 
-    print_top_n_elements(relevant_scores, 5)
+        results = ngram_processor(text = aHtmlPage.title, weight = 10.0, num = 4);
+        relevant_scores = combine_dicts(relevant_scores, results.ngram_dict)
+
+        print_top_n_elements(relevant_scores, 5)
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
     pass
 
 def combine_dicts(a, b, op=operator.add):
@@ -36,8 +43,10 @@ def combine_dicts(a, b, op=operator.add):
 
 def print_top_n_elements(A, n):
     top_elements = dict(sorted(A.iteritems(), key=operator.itemgetter(1), reverse=True)[:n])
+
+    print "Scores | topics"
     for key, value in sorted(top_elements.items(), key=operator.itemgetter(1), reverse=True):
-        print value, key
+        print value, " | ", key
     pass
 
 if __name__ == "__main__":
