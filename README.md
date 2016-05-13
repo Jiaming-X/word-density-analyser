@@ -1,11 +1,11 @@
 # word-density-analyser
 
-### summary
+### Summary
 This project uses n gram algo to implement a generic word density analyser that finds the relevant topics of any webpage.
 
 
 
-### example commands, and their results:
+### Example commands, and their results:
 ```sh
 python main.py "http://www.cnn.com/2013/06/10/politics/edward-snowden-profile/" 
 ```
