@@ -1,6 +1,6 @@
 # word-density-analyser
 
-### Summary
+### Summary 
 This project uses n gram algo to implement a generic word density analyser that finds the relevant topics of any webpage.
 
 
